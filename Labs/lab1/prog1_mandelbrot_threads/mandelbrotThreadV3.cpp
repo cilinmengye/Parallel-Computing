@@ -62,17 +62,29 @@ void workerThreadStart(WorkerArgs * const args) {
     float dy = (y1 - y0) / height;
     float dx = (x1 - x0) / width;
     int dh = height / numThreads;
-    if (height % numThreads != 0 && (height - numThreads * dh) > threadId) dh += 1;
-
+    int pos = threadId;
     printf("Hello world from thread %d\n", threadId);
 
     for (int j = 0; j < dh; j++) {
+        pos = (pos - 1 + numThreads) % numThreads;
         for (int i = 0; i < width; i++) {
             float x = x0 + i * dx;
-            float y = y0 + (threadId + numThreads * j) * dy;
-            int index = (threadId + numThreads * j) * width + i;
+            float y = y0 + (pos + numThreads * j) * dy;
+            int index = (pos + numThreads * j) * width + i;
 
             args->output[index] = mandel(x, y, args->maxIterations);
+        }
+    }
+    if (height % numThreads != 0) {
+        pos = (pos - 1 + numThreads) % numThreads;
+        if (pos < (height - numThreads * dh)) {
+            for (int i = 0; i < width; i++) {
+                float x = x0 + i * dx;
+                float y = y0 + (pos + numThreads * dh) * dy;
+                int index = (pos + numThreads * dh) * width + i;
+
+                args->output[index] = mandel(x, y, args->maxIterations);
+            }
         }
     }
 
