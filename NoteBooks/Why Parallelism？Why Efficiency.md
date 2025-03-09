@@ -615,7 +615,23 @@ NUMA（Non-uniform memory access）非统一内存访问
 
 # Parallel Programing Basics
 
+## Creating a parallel program
 
+### Amdahl’s Law（阿姆达尔定律）
+
+并行程序的宏观思考过程可总结如下：
+
+* 挖掘工作可并行的部分。
+* 划分工作。
+* 管理数据的方面，沟通，同步。
+
+最初我们计算并行效率可通过如下公式：
+
+$Speedup (Pprocessor) = \frac{Time(1 Processor)}{Time(P Processor)}$
+
+我们能够依据Amdahl’s定律得知$Speedup$是有上限的：
+
+定义$S$为不可并行
 
 # Assignment 1: Performance Analysis on a Quad-Core CPU
 
