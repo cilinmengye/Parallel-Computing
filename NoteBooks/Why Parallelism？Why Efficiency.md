@@ -629,9 +629,64 @@ NUMA（Non-uniform memory access）非统一内存访问
 
 $Speedup (Pprocessor) = \frac{Time(1 Processor)}{Time(P Processor)}$
 
-我们能够依据Amdahl’s定律得知$Speedup$是有上限的：
+我们能够依据Amdahl’s定律得知$Speedup$是有上限的，定义$S$为不可并行执行占总顺序执行的比例，那么：
 
-定义$S$为不可并行
+$Amdahl’s Law = \frac{1}{s+\frac{1-s}{p}}$
+
+**举例**
+
+先需要对一个$N * N$的图片进行如下两个步骤：
+
+1. 提高图片每一个像素的亮度至两倍
+2. 对图片全部像素求平均
+
+我们可以很容易此种方法：对于步骤1无数据依赖完全可并行，对于步骤2可以先P个线程分别并行求和某一块区域，最终将P块区域的和相加，求平均。那么就有下图所示：
+
+![image-20250309213226775](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309213226775.png)
+
+其中$S = \frac{p}{2^n}$, $Speedup <= \frac{2n^2p}{p^2+2n^2-p}，当n>>p时，Speedup <= 1$
+
+### Parallel Programming Process
+
+![image-20250309214120208](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309214120208.png)
+
+* **Decomposition(分解)**：将原问题分解为许多子问题（tasks），这个过程需要思考**依赖关系**，最好能够分解出足够的子问题让全部的执行部件处于忙碌状态
+* **Assignment(分配)**：将子问题分配给线程进行执行，这个过程需要思考**负载均衡，减少消息传递消耗（communication costs）**
+  * 静态分配：硬编码分配方式，指定tasks给线程执行
+  * 动态分配：运行时决定线程执行哪些tasks，比如将tasks装入queue，线程执行完task后再从queue中取出task，一般不会有太差的负载均衡
+
+​	![image-20250309220716737](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309220716737.png)
+
+* **Orchestration(编排)**：需要考虑**组织消息传递，同步，保持较好的局部性**
+* **Mapping(映射)**：将线程的工作映射到处理器执行单元上，一般不是程序员需要考虑的事情，一般由**操作系统，编译器，硬件（CPU,GPU）**决定
+
+## A parallel programming example
+
+算法执行Gauss - Seidel sweeps
+
+$Gauss-Seidel \ sweeps更新方式: A[i,j] = 0.2 * (A[i, j] + A[i,j - 1] + A[i - 1, j] + A[i, j + 1] + A[i + 1, j]) $， 数据依赖如下：(回想下[PLCS问题](https://www.cnblogs.com/cilinmengye/p/18548242#psum)，其LCS普通算法数据依赖很像这个)
+
+![image-20250309221953997](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309221953997.png)
+
+对于这个算法，我们挖掘其中的可并行性，发现对角线上的元素无数据依赖：
+
+![image-20250309222132625](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309222132625.png)
+
+但是这依旧有许多问题：
+
+* 负载不均衡：每个对角线上需处理的元素个数偏差较大
+* 局部性差
+* 需要同步
+
+**换个算法吧，我们需要让生活更美好简单一点：红黑排序**
+
+![image-20250309223119928](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309223119928.png)
+
+![image-20250309223423325](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250309223423325.png)
+
+为什么说要取决于程序运行在哪个机器上呢？
+
+需要注意边界情况，当程序运行在Message passing Model时，因为数据在不同的机器/处理器上，边界数据传递需要开销，那么边界越多开销也越大
 
 # Assignment 1: Performance Analysis on a Quad-Core CPU
 
@@ -981,4 +1036,23 @@ methord1是初始未进行改进的方法，methord2是改进后的方法
 serial版本和thread版本中，dy,dx的值分别一样，但是在serial中，当 y0 = -1, j = 601时， 计算出来的y 和 在thread中, 当 y0 = -1 + 600 * dy, j = 1时, 计算出来的y，都结果不一样。
 
 所以thread版本需要让y0,x0以及i，j与serial版本一样才能最保证结果相同。
+
+## Program 2: Vectorizing Code Using SIMD Intrinsics (20 points)
+
+> Run `./myexp -s 10000` and sweep the vector width from 2, 4, 8, to 16. Record the resulting vector utilization. You can do this by changing the `#define VECTOR_WIDTH` value in `CS149intrin.h`. Does the vector utilization increase, decrease or stay the same as `VECTOR_WIDTH` changes? Why?
+
+![image-20250318162651590](https://raw.githubusercontent.com/cilinmengye/Resource-Warehourse/main/CloundIMG/image-20250318162651590.png)
+
+结果看起来是decrease的，首先我们要搞清楚Vector Utilization的计算方式：
+
+$Vector \ Utilization = \frac{Utilized \ Vector \ Lanes}{Total \ Vector \ Lanes}$
+
+$Total \ Vector \ Lanes = Total \ Vector \ Instructions * Vector \ Width$
+
+同时有很多因素导致在一次Vector指令操作时，Vector Lanes不能得到充分利用：
+
+1. 分支判断if
+2. 循环while
+
+这些语句总是会导致lane会有停用等待的情况，当Vector Width成倍数增长时，Total Vector Instructions并非成倍数的下降，Utilized Vector Lanes也并非成倍数的上升
 
