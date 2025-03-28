@@ -1,0 +1,1119 @@
+# ========
+# captured on    : Thu Mar 27 11:02:36 2025
+# header version : 1
+# data offset    : 1528
+# data size      : 1209008
+# feat offset    : 1210536
+# hostname : black
+# os release : 5.15.0-133-generic
+# perf version : 5.15.173
+# arch : x86_64
+# nrcpus online : 160
+# nrcpus avail : 160
+# cpudesc : Intel(R) Xeon(R) Platinum 8383C CPU @ 2.70GHz
+# cpuid : GenuineIntel,6,106,6
+# total memory : 527755292 kB
+# cmdline : /usr/lib/linux-tools-5.15.0-133/perf record -o perfData/perf.data -e cycles -F 999 -g -- ./kmeans 
+# event : name = cycles, , id = { 225348, 225349, 225350, 225351, 225352, 225353, 225354, 225355, 225356, 225357, 225358, 225359, 225360, 225361, 225362, 225363, 225364, 225365, 225366, 225367, 225368, 225369, 225370, 225371, 225372, 225373, 225374, 225375, 225376, 225377, 225378, 225379, 225380, 225381, 225382, 225383, 225384, 225385, 225386, 225387, 225388, 225389, 225390, 225391, 225392, 225393, 225394, 225395, 225396, 225397, 225398, 225399, 225400, 225401, 225402, 225403, 225404, 225405, 225406, 225407, 225408, 225409, 225410, 225411, 225412, 225413, 225414, 225415, 225416, 225417, 225418, 225419, 225420, 225421, 225422, 225423, 225424, 225425, 225426, 225427, 225428, 225429, 225430, 225431, 225432, 225433, 225434, 225435, 225436, 225437, 225438, 225439, 225440, 225441, 225442, 225443, 225444, 225445, 225446, 225447, 225448, 225449, 225450, 225451, 225452, 225453, 225454, 225455, 225456, 225457, 225458, 225459, 225460, 225461, 225462, 225463, 225464, 225465, 225466, 225467, 225468, 225469, 225470, 225471, 225472, 225473, 225474, 225475, 225476, 225477, 225478, 225479, 225480, 225481, 225482, 225483, 225484, 225485, 225486, 225487, 225488, 225489, 225490, 225491, 225492, 225493, 225494, 225495, 225496, 225497, 225498, 225499, 225500, 225501, 225502, 225503, 225504, 225505, 225506, 225507 }, size = 128, { sample_period, sample_freq } = 999, sample_type = IP|TID|TIME|CALLCHAIN|PERIOD, read_format = ID, disabled = 1, inherit = 1, mmap = 1, comm = 1, freq = 1, enable_on_exec = 1, task = 1, sample_id_all = 1, exclude_guest = 1, mmap2 = 1, comm_exec = 1, ksymbol = 1, bpf_event = 1
+# CPU_TOPOLOGY info available, use -I to display
+# NUMA_TOPOLOGY info available, use -I to display
+# pmu mappings: uncore_cha_34 = 56, uncore_cha_1 = 23, uncore_cha_24 = 46, uncore_irp_3 = 71, software = 1, uncore_m2m_3 = 20, uncore_cha_14 = 36, uncore_imc_free_running_1 = 100, uncore_imc_5 = 92, uncore_m3upi_0 = 14, uncore_iio_free_running_5 = 86, uncore_cha_32 = 54, uncore_cha_22 = 44, uncore_irp_1 = 69, uncore_m2m_1 = 18, uncore_cha_12 = 34, uncore_imc_3 = 90, uncore_cha_8 = 30, uncore_iio_free_running_3 = 84, uncore_cha_30 = 52, uncore_cha_20 = 42, uncore_cha_10 = 32, uncore_cha_39 = 61, uncore_imc_1 = 88, uncore_upi_1 = 12, power = 105, uncore_cha_6 = 28, uncore_iio_free_running_1 = 82, uncore_cha_29 = 51, uncore_m2pcie_4 = 78, uncore_cha_19 = 41, uncore_iio_4 = 66, uprobe = 7, intel_bts = 8, uncore_cha_37 = 59, cpu = 4, uncore_imc_11 = 98, uncore_cha_4 = 26, uncore_cha_27 = 49, uncore_m2pcie_2 = 76, uncore_cha_17 = 39, uncore_imc_8 = 95, uncore_iio_2 = 64, cstate_core = 103, uncore_cha_35 = 57, breakpoint = 5, uncore_cha_2 = 24, uncore_cha_25 = 47, uncore_m2pcie_0 = 74, uncore_irp_4 = 72, uncore_cha_15 = 37, uncore_imc_free_running_2 = 101, uncore_imc_6 = 93, uncore_m3upi_1 = 15, uncore_iio_0 = 62, uncore_cha_33 = 55, tracepoint = 2, uncore_cha_0 = 22, uncore_cha_23 = 45, uncore_irp_2 = 70, uncore_m2m_2 = 19, uncore_cha_13 = 35, cstate_pkg = 104, uncore_imc_free_running_0 = 99, uncore_imc_4 = 91, uncore_cha_9 = 31, uncore_iio_free_running_4 = 85, uncore_cha_31 = 53, uncore_ubox = 21, uncore_cha_21 = 43, uncore_irp_0 = 68, uncore_m2m_0 = 17, uncore_cha_11 = 33, uncore_imc_2 = 89, uncore_upi_2 = 13, kprobe = 6, uncore_cha_7 = 29, uncore_iio_free_running_2 = 83, uncore_m2pcie_5 = 79, uncore_iio_5 = 67, uncore_cha_38 = 60, uncore_imc_0 = 87, uncore_upi_0 = 11, uncore_cha_5 = 27, uncore_iio_free_running_0 = 81, uncore_pcu = 80, uncore_cha_28 = 50, uncore_m2pcie_3 = 77, uncore_cha_18 = 40, uncore_imc_9 = 96, msr = 10, uncore_iio_3 = 65, uncore_cha_36 = 58, intel_pt = 9, uncore_imc_10 = 97, uncore_cha_3 = 25, uncore_cha_26 = 48, uncore_m2pcie_1 = 75, uncore_irp_5 = 73, uncore_cha_16 = 38, uncore_imc_free_running_3 = 102, uncore_imc_7 = 94, uncore_m3upi_2 = 16, uncore_iio_1 = 63
+# CACHE info available, use -I to display
+# time of first sample : 1991507.017828
+# time of last sample : 1991519.862234
+# sample duration :  12844.406 ms
+# MEM_TOPOLOGY info available, use -I to display
+# cpu pmu capabilities: branches=32, max_precise=3, pmu_name=icelake
+# missing features: TRACING_DATA BRANCH_STACK GROUP_DESC AUXTRACE STAT CLOCKID DIR_FORMAT COMPRESSED CLOCK_DATA HYBRID_TOPOLOGY HYBRID_CPU_PMU_CAPS 
+# ========
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 12K of event 'cycles'
+# Event count (approx.): 42635855674
+#
+# Children      Self  Command  Shared Object        Symbol                                                                                                   
+# ........  ........  .......  ...................  .........................................................................................................
+#
+    93.23%     0.00%  kmeans   libc.so.6            [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               |          
+                --92.68%--kMeansThread
+                          |          
+                          |--62.48%--computeAssignments
+                          |          |          
+                          |           --0.74%--asm_sysvec_apic_timer_interrupt
+                          |                     |          
+                          |                      --0.72%--sysvec_apic_timer_interrupt
+                          |                                |          
+                          |                                 --0.68%--irqentry_exit
+                          |                                           irqentry_exit_to_user_mode
+                          |                                           exit_to_user_mode_prepare
+                          |                                           exit_to_user_mode_loop
+                          |                                           task_work_run
+                          |                                           task_numa_work
+                          |                                           change_prot_numa
+                          |                                           change_protection
+                          |                                           change_protection_range
+                          |                                           change_p4d_range
+                          |                                           change_pmd_range.isra.0
+                          |                                           |          
+                          |                                            --0.64%--change_pte_range
+                          |          
+                          |--18.27%--computeCost
+                          |          
+                           --11.92%--computeCentroids
+
+    93.23%     0.00%  kmeans   kmeans               [.] main
+            |
+            ---main
+               |          
+                --92.68%--kMeansThread
+                          |          
+                          |--62.48%--computeAssignments
+                          |          |          
+                          |           --0.74%--asm_sysvec_apic_timer_interrupt
+                          |                     |          
+                          |                      --0.72%--sysvec_apic_timer_interrupt
+                          |                                |          
+                          |                                 --0.68%--irqentry_exit
+                          |                                           irqentry_exit_to_user_mode
+                          |                                           exit_to_user_mode_prepare
+                          |                                           exit_to_user_mode_loop
+                          |                                           task_work_run
+                          |                                           task_numa_work
+                          |                                           change_prot_numa
+                          |                                           change_protection
+                          |                                           change_protection_range
+                          |                                           change_p4d_range
+                          |                                           change_pmd_range.isra.0
+                          |                                           |          
+                          |                                            --0.64%--change_pte_range
+                          |          
+                          |--18.27%--computeCost
+                          |          
+                           --11.92%--computeCentroids
+
+    92.68%     0.00%  kmeans   kmeans               [.] kMeansThread
+            |
+            ---kMeansThread
+               |          
+               |--62.48%--computeAssignments
+               |          |          
+               |           --0.74%--asm_sysvec_apic_timer_interrupt
+               |                     |          
+               |                      --0.72%--sysvec_apic_timer_interrupt
+               |                                |          
+               |                                 --0.68%--irqentry_exit
+               |                                           irqentry_exit_to_user_mode
+               |                                           exit_to_user_mode_prepare
+               |                                           exit_to_user_mode_loop
+               |                                           task_work_run
+               |                                           task_numa_work
+               |                                           change_prot_numa
+               |                                           change_protection
+               |                                           change_protection_range
+               |                                           change_p4d_range
+               |                                           change_pmd_range.isra.0
+               |                                           |          
+               |                                            --0.64%--change_pte_range
+               |          
+               |--18.27%--computeCost
+               |          
+                --11.92%--computeCentroids
+
+    62.48%    61.70%  kmeans   kmeans               [.] computeAssignments
+            |          
+            |--61.70%--__libc_start_call_main
+            |          main
+            |          kMeansThread
+            |          computeAssignments
+            |          
+             --0.78%--computeAssignments
+                       |          
+                        --0.74%--asm_sysvec_apic_timer_interrupt
+                                  |          
+                                   --0.72%--sysvec_apic_timer_interrupt
+                                             |          
+                                              --0.68%--irqentry_exit
+                                                        irqentry_exit_to_user_mode
+                                                        exit_to_user_mode_prepare
+                                                        exit_to_user_mode_loop
+                                                        task_work_run
+                                                        task_numa_work
+                                                        change_prot_numa
+                                                        change_protection
+                                                        change_protection_range
+                                                        change_p4d_range
+                                                        change_pmd_range.isra.0
+                                                        |          
+                                                         --0.64%--change_pte_range
+
+    18.27%    18.03%  kmeans   kmeans               [.] computeCost
+            |          
+             --18.03%--__libc_start_call_main
+                       main
+                       kMeansThread
+                       computeCost
+
+    11.92%    11.87%  kmeans   kmeans               [.] computeCentroids
+            |          
+             --11.87%--__libc_start_call_main
+                       main
+                       kMeansThread
+                       computeCentroids
+
+     3.18%     0.00%  kmeans   [kernel.kallsyms]    [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+                --3.17%--x64_sys_call
+                          |          
+                           --2.77%--__x64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     new_sync_read
+                                     ext4_file_read_iter
+                                     generic_file_read_iter
+                                     |          
+                                      --2.77%--filemap_read
+                                                |          
+                                                 --2.34%--copy_user_enhanced_fast_string
+                                                           |          
+                                                            --1.39%--asm_exc_page_fault
+                                                                      exc_page_fault
+                                                                      |          
+                                                                       --1.37%--do_user_addr_fault
+                                                                                 |          
+                                                                                  --1.32%--handle_mm_fault
+                                                                                            |          
+                                                                                             --1.27%--__handle_mm_fault
+                                                                                                       |          
+                                                                                                        --1.23%--handle_pte_fault
+                                                                                                                  |          
+                                                                                                                   --1.16%--do_anonymous_page
+                                                                                                                             |          
+                                                                                                                              --0.56%--__mem_cgroup_charge
+
+     3.18%     0.00%  kmeans   [kernel.kallsyms]    [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+                --3.17%--x64_sys_call
+                          |          
+                           --2.77%--__x64_sys_read
+                                     ksys_read
+                                     vfs_read
+                                     new_sync_read
+                                     ext4_file_read_iter
+                                     generic_file_read_iter
+                                     |          
+                                      --2.77%--filemap_read
+                                                |          
+                                                 --2.34%--copy_user_enhanced_fast_string
+                                                           |          
+                                                            --1.39%--asm_exc_page_fault
+                                                                      exc_page_fault
+                                                                      |          
+                                                                       --1.37%--do_user_addr_fault
+                                                                                 |          
+                                                                                  --1.32%--handle_mm_fault
+                                                                                            |          
+                                                                                             --1.27%--__handle_mm_fault
+                                                                                                       |          
+                                                                                                        --1.23%--handle_pte_fault
+                                                                                                                  |          
+                                                                                                                   --1.16%--do_anonymous_page
+                                                                                                                             |          
+                                                                                                                              --0.56%--__mem_cgroup_charge
+
+     3.17%     0.00%  kmeans   [kernel.kallsyms]    [k] x64_sys_call
+            |
+            ---x64_sys_call
+               |          
+                --2.77%--__x64_sys_read
+                          ksys_read
+                          vfs_read
+                          new_sync_read
+                          ext4_file_read_iter
+                          generic_file_read_iter
+                          |          
+                           --2.77%--filemap_read
+                                     |          
+                                      --2.34%--copy_user_enhanced_fast_string
+                                                |          
+                                                 --1.39%--asm_exc_page_fault
+                                                           exc_page_fault
+                                                           |          
+                                                            --1.37%--do_user_addr_fault
+                                                                      |          
+                                                                       --1.32%--handle_mm_fault
+                                                                                 |          
+                                                                                  --1.27%--__handle_mm_fault
+                                                                                            |          
+                                                                                             --1.23%--handle_pte_fault
+                                                                                                       |          
+                                                                                                        --1.16%--do_anonymous_page
+                                                                                                                  |          
+                                                                                                                   --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   libc.so.6            [.] read
+            |
+            ---read
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_read
+               ksys_read
+               vfs_read
+               new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_read
+            |
+            ---__x64_sys_read
+               ksys_read
+               vfs_read
+               new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] ksys_read
+            |
+            ---ksys_read
+               vfs_read
+               new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] vfs_read
+            |
+            ---vfs_read
+               new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] new_sync_read
+            |
+            ---new_sync_read
+               ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_file_read_iter
+            |
+            ---ext4_file_read_iter
+               generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.00%  kmeans   [kernel.kallsyms]    [k] generic_file_read_iter
+            |
+            ---generic_file_read_iter
+               |          
+                --2.77%--filemap_read
+                          |          
+                           --2.34%--copy_user_enhanced_fast_string
+                                     |          
+                                      --1.39%--asm_exc_page_fault
+                                                exc_page_fault
+                                                |          
+                                                 --1.37%--do_user_addr_fault
+                                                           |          
+                                                            --1.32%--handle_mm_fault
+                                                                      |          
+                                                                       --1.27%--__handle_mm_fault
+                                                                                 |          
+                                                                                  --1.23%--handle_pte_fault
+                                                                                            |          
+                                                                                             --1.16%--do_anonymous_page
+                                                                                                       |          
+                                                                                                        --0.56%--__mem_cgroup_charge
+
+     2.77%     0.02%  kmeans   [kernel.kallsyms]    [k] filemap_read
+            |          
+             --2.75%--filemap_read
+                       |          
+                        --2.34%--copy_user_enhanced_fast_string
+                                  |          
+                                   --1.39%--asm_exc_page_fault
+                                             exc_page_fault
+                                             |          
+                                              --1.37%--do_user_addr_fault
+                                                        |          
+                                                         --1.32%--handle_mm_fault
+                                                                   |          
+                                                                    --1.27%--__handle_mm_fault
+                                                                              |          
+                                                                               --1.23%--handle_pte_fault
+                                                                                         |          
+                                                                                          --1.16%--do_anonymous_page
+                                                                                                    |          
+                                                                                                     --0.56%--__mem_cgroup_charge
+
+     2.54%     0.00%  kmeans   [unknown]            [.] 0x00007ffec5af9f40
+            |
+            ---0x7ffec5af9f40
+               |          
+                --2.44%--__vfprintf_internal
+                          |          
+                           --1.30%--__GI___printf_fp_l
+
+     2.44%     0.28%  kmeans   libc.so.6            [.] __vfprintf_internal
+            |          
+             --2.16%--__vfprintf_internal
+                       |          
+                        --1.30%--__GI___printf_fp_l
+
+     2.35%     0.96%  kmeans   [kernel.kallsyms]    [k] copy_user_enhanced_fast_string
+            |          
+            |--1.39%--copy_user_enhanced_fast_string
+            |          asm_exc_page_fault
+            |          exc_page_fault
+            |          |          
+            |           --1.37%--do_user_addr_fault
+            |                     |          
+            |                      --1.32%--handle_mm_fault
+            |                                |          
+            |                                 --1.27%--__handle_mm_fault
+            |                                           |          
+            |                                            --1.23%--handle_pte_fault
+            |                                                      |          
+            |                                                       --1.16%--do_anonymous_page
+            |                                                                 |          
+            |                                                                  --0.56%--__mem_cgroup_charge
+            |          
+             --0.95%--read
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_read
+                       ksys_read
+                       vfs_read
+                       new_sync_read
+                       ext4_file_read_iter
+                       generic_file_read_iter
+                       filemap_read
+                       copy_user_enhanced_fast_string
+
+     1.74%     0.33%  kmeans   [kernel.kallsyms]    [k] asm_exc_page_fault
+            |          
+             --1.40%--asm_exc_page_fault
+                       exc_page_fault
+                       |          
+                        --1.39%--do_user_addr_fault
+                                  |          
+                                   --1.34%--handle_mm_fault
+                                             |          
+                                              --1.29%--__handle_mm_fault
+                                                        |          
+                                                         --1.25%--handle_pte_fault
+                                                                   |          
+                                                                    --1.18%--do_anonymous_page
+                                                                              |          
+                                                                               --0.57%--__mem_cgroup_charge
+
+     1.40%     0.01%  kmeans   [kernel.kallsyms]    [k] exc_page_fault
+            |          
+             --1.40%--exc_page_fault
+                       |          
+                        --1.39%--do_user_addr_fault
+                                  |          
+                                   --1.34%--handle_mm_fault
+                                             |          
+                                              --1.29%--__handle_mm_fault
+                                                        |          
+                                                         --1.25%--handle_pte_fault
+                                                                   |          
+                                                                    --1.18%--do_anonymous_page
+                                                                              |          
+                                                                               --0.57%--__mem_cgroup_charge
+
+     1.39%     0.01%  kmeans   [kernel.kallsyms]    [k] do_user_addr_fault
+            |          
+             --1.38%--do_user_addr_fault
+                       |          
+                        --1.34%--handle_mm_fault
+                                  |          
+                                   --1.29%--__handle_mm_fault
+                                             |          
+                                              --1.25%--handle_pte_fault
+                                                        |          
+                                                         --1.18%--do_anonymous_page
+                                                                   |          
+                                                                    --0.57%--__mem_cgroup_charge
+
+     1.34%     0.03%  kmeans   [kernel.kallsyms]    [k] handle_mm_fault
+            |          
+             --1.31%--handle_mm_fault
+                       |          
+                        --1.29%--__handle_mm_fault
+                                  |          
+                                   --1.25%--handle_pte_fault
+                                             |          
+                                              --1.18%--do_anonymous_page
+                                                        |          
+                                                         --0.57%--__mem_cgroup_charge
+
+     1.31%     1.31%  kmeans   libc.so.6            [.] __GI___printf_fp_l
+            |
+            ---0x7ffec5af9f40
+               |          
+                --1.30%--__vfprintf_internal
+                          __GI___printf_fp_l
+
+     1.29%     0.04%  kmeans   [kernel.kallsyms]    [k] __handle_mm_fault
+            |          
+             --1.25%--__handle_mm_fault
+                       |          
+                        --1.25%--handle_pte_fault
+                                  |          
+                                   --1.18%--do_anonymous_page
+                                             |          
+                                              --0.57%--__mem_cgroup_charge
+
+     1.25%     0.01%  kmeans   [kernel.kallsyms]    [k] handle_pte_fault
+            |          
+             --1.24%--handle_pte_fault
+                       |          
+                        --1.18%--do_anonymous_page
+                                  |          
+                                   --0.57%--__mem_cgroup_charge
+
+     1.18%     0.26%  kmeans   [kernel.kallsyms]    [k] do_anonymous_page
+            |          
+             --0.93%--do_anonymous_page
+                       |          
+                        --0.57%--__mem_cgroup_charge
+
+     1.03%     0.01%  kmeans   [kernel.kallsyms]    [k] asm_sysvec_apic_timer_interrupt
+            |          
+             --1.01%--asm_sysvec_apic_timer_interrupt
+                       sysvec_apic_timer_interrupt
+                       |          
+                        --0.94%--irqentry_exit
+                                  irqentry_exit_to_user_mode
+                                  exit_to_user_mode_prepare
+                                  exit_to_user_mode_loop
+                                  task_work_run
+                                  task_numa_work
+                                  change_prot_numa
+                                  change_protection
+                                  change_protection_range
+                                  change_p4d_range
+                                  change_pmd_range.isra.0
+                                  |          
+                                   --0.89%--change_pte_range
+
+     1.01%     0.00%  kmeans   [kernel.kallsyms]    [k] sysvec_apic_timer_interrupt
+            |
+            ---sysvec_apic_timer_interrupt
+               |          
+                --0.94%--irqentry_exit
+                          irqentry_exit_to_user_mode
+                          exit_to_user_mode_prepare
+                          exit_to_user_mode_loop
+                          task_work_run
+                          task_numa_work
+                          change_prot_numa
+                          change_protection
+                          change_protection_range
+                          change_p4d_range
+                          change_pmd_range.isra.0
+                          |          
+                           --0.89%--change_pte_range
+
+     0.95%     0.00%  kmeans   [kernel.kallsyms]    [k] exit_to_user_mode_prepare
+            |
+            ---exit_to_user_mode_prepare
+               exit_to_user_mode_loop
+               task_work_run
+               |          
+                --0.94%--task_numa_work
+                          change_prot_numa
+                          change_protection
+                          change_protection_range
+                          change_p4d_range
+                          change_pmd_range.isra.0
+                          |          
+                           --0.89%--change_pte_range
+
+     0.95%     0.00%  kmeans   [kernel.kallsyms]    [k] exit_to_user_mode_loop
+            |
+            ---exit_to_user_mode_loop
+               task_work_run
+               |          
+                --0.94%--task_numa_work
+                          change_prot_numa
+                          change_protection
+                          change_protection_range
+                          change_p4d_range
+                          change_pmd_range.isra.0
+                          |          
+                           --0.89%--change_pte_range
+
+     0.95%     0.00%  kmeans   [kernel.kallsyms]    [k] task_work_run
+            |
+            ---task_work_run
+               |          
+                --0.94%--task_numa_work
+                          change_prot_numa
+                          change_protection
+                          change_protection_range
+                          change_p4d_range
+                          change_pmd_range.isra.0
+                          |          
+                           --0.89%--change_pte_range
+
+     0.94%     0.01%  kmeans   [kernel.kallsyms]    [k] change_pmd_range.isra.0
+            |          
+             --0.93%--change_pmd_range.isra.0
+                       |          
+                        --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] irqentry_exit
+            |
+            ---irqentry_exit
+               irqentry_exit_to_user_mode
+               exit_to_user_mode_prepare
+               exit_to_user_mode_loop
+               task_work_run
+               task_numa_work
+               change_prot_numa
+               change_protection
+               change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] irqentry_exit_to_user_mode
+            |
+            ---irqentry_exit_to_user_mode
+               exit_to_user_mode_prepare
+               exit_to_user_mode_loop
+               task_work_run
+               task_numa_work
+               change_prot_numa
+               change_protection
+               change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] task_numa_work
+            |
+            ---task_numa_work
+               change_prot_numa
+               change_protection
+               change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] change_prot_numa
+            |
+            ---change_prot_numa
+               change_protection
+               change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] change_protection
+            |
+            ---change_protection
+               change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] change_protection_range
+            |
+            ---change_protection_range
+               change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.94%     0.00%  kmeans   [kernel.kallsyms]    [k] change_p4d_range
+            |
+            ---change_p4d_range
+               change_pmd_range.isra.0
+               |          
+                --0.89%--change_pte_range
+
+     0.89%     0.81%  kmeans   [kernel.kallsyms]    [k] change_pte_range
+            |          
+             --0.81%--__libc_start_call_main
+                       main
+                       kMeansThread
+                       |          
+                        --0.58%--computeAssignments
+                                  asm_sysvec_apic_timer_interrupt
+                                  sysvec_apic_timer_interrupt
+                                  irqentry_exit
+                                  irqentry_exit_to_user_mode
+                                  exit_to_user_mode_prepare
+                                  exit_to_user_mode_loop
+                                  task_work_run
+                                  task_numa_work
+                                  change_prot_numa
+                                  change_protection
+                                  change_protection_range
+                                  change_p4d_range
+                                  change_pmd_range.isra.0
+                                  change_pte_range
+
+     0.58%     0.00%  kmeans   [unknown]            [.] 0x48e8580348fb8948
+            |
+            ---0x48e8580348fb8948
+               virtual thunk to std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream()
+               0x6
+               |          
+                --0.55%--std::ostream::_M_insert<double>
+
+     0.58%     0.00%  kmeans   libstdc++.so.6.0.30  [.] virtual thunk to std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream()
+            |
+            ---virtual thunk to std::basic_ofstream<char, std::char_traits<char> >::~basic_ofstream()
+               0x6
+               |          
+                --0.55%--std::ostream::_M_insert<double>
+
+     0.58%     0.00%  kmeans   [unknown]            [.] 0x0000000000000006
+            |
+            ---0x6
+               |          
+                --0.55%--std::ostream::_M_insert<double>
+
+     0.58%     0.14%  kmeans   libstdc++.so.6.0.30  [.] std::ostream::_M_insert<double>
+     0.57%     0.00%  kmeans   [kernel.kallsyms]    [k] __mem_cgroup_charge
+            |
+            ---__mem_cgroup_charge
+
+     0.39%     0.38%  kmeans   libc.so.6            [.] hack_digit
+     0.34%     0.01%  kmeans   [kernel.kallsyms]    [k] charge_memcg
+     0.31%     0.31%  kmeans   libc.so.6            [.] __mpn_mul_1
+     0.26%     0.05%  kmeans   [kernel.kallsyms]    [k] zap_pte_range
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] unmap_vmas
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] unmap_single_vma
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] unmap_page_range
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] zap_pmd_range.isra.0
+     0.26%     0.00%  kmeans   libc.so.6            [.] __munmap
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_munmap
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] __vm_munmap
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] __do_munmap
+     0.26%     0.00%  kmeans   [kernel.kallsyms]    [k] unmap_region
+     0.23%     0.22%  kmeans   [kernel.kallsyms]    [k] try_charge_memcg
+     0.22%     0.22%  kmeans   [kernel.kallsyms]    [k] get_mem_cgroup_from_mm
+     0.21%     0.21%  kmeans   libc.so.6            [.] __random
+     0.19%     0.00%  kmeans   [kernel.kallsyms]    [k] __alloc_pages
+     0.19%     0.00%  kmeans   [kernel.kallsyms]    [k] alloc_pages_vma
+     0.18%     0.01%  kmeans   [kernel.kallsyms]    [k] get_page_from_freelist
+     0.17%     0.03%  kmeans   [kernel.kallsyms]    [k] release_pages
+     0.15%     0.00%  kmeans   [kernel.kallsyms]    [k] free_pages_and_swap_cache
+     0.15%     0.00%  kmeans   [kernel.kallsyms]    [k] tlb_flush_mmu
+     0.13%     0.13%  kmeans   libstdc++.so.6.0.30  [.] std::__ostream_insert<char, std::char_traits<char> >
+     0.12%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec541259
+     0.11%     0.00%  kmeans   libc.so.6            [.] __GI___writev
+     0.11%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_writev
+     0.11%     0.00%  kmeans   [kernel.kallsyms]    [k] do_writev
+     0.11%     0.00%  kmeans   [kernel.kallsyms]    [k] vfs_writev
+     0.11%     0.00%  kmeans   [kernel.kallsyms]    [k] do_iter_write
+     0.10%     0.01%  kmeans   [kernel.kallsyms]    [k] rmqueue
+     0.10%     0.10%  kmeans   libstdc++.so.6.0.30  [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_float<double>
+     0.10%     0.10%  kmeans   [kernel.kallsyms]    [k] vm_normal_page
+     0.09%     0.09%  kmeans   [kernel.kallsyms]    [k] rmqueue_bulk
+     0.09%     0.01%  kmeans   [kernel.kallsyms]    [k] free_unref_page_list
+     0.08%     0.08%  kmeans   libc.so.6            [.] __vsnprintf_internal
+     0.08%     0.01%  kmeans   [kernel.kallsyms]    [k] lru_cache_add
+     0.08%     0.00%  kmeans   [kernel.kallsyms]    [k] lru_cache_add_inactive_or_unevictable
+     0.08%     0.01%  kmeans   [kernel.kallsyms]    [k] free_unref_page_commit.constprop.0
+     0.08%     0.08%  kmeans   libc.so.6            [.] __uselocale
+     0.07%     0.01%  kmeans   [kernel.kallsyms]    [k] do_iter_readv_writev
+     0.07%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_file_write_iter
+     0.07%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_buffered_write_iter
+     0.07%     0.00%  kmeans   [kernel.kallsyms]    [k] generic_perform_write
+     0.07%     0.07%  kmeans   [kernel.kallsyms]    [k] cgroup_rstat_updated
+     0.07%     0.07%  kmeans   libstdc++.so.6.0.30  [.] std::basic_filebuf<char, std::char_traits<char> >::xsputn
+     0.07%     0.07%  kmeans   libc.so.6            [.] __mpn_extract_double
+     0.07%     0.07%  kmeans   kmeans               [.] logToFile
+     0.07%     0.07%  kmeans   libstdc++.so.6.0.30  [.] std::basic_streambuf<char, std::char_traits<char> >::xsputn
+     0.07%     0.00%  kmeans   [kernel.kallsyms]    [k] __pagevec_lru_add
+     0.07%     0.07%  kmeans   [kernel.kallsyms]    [k] clear_page_erms
+     0.07%     0.07%  kmeans   [kernel.kallsyms]    [k] __free_one_page
+     0.07%     0.00%  kmeans   [kernel.kallsyms]    [k] free_pcppages_bulk
+     0.07%     0.07%  kmeans   libc.so.6            [.] _IO_str_init_static_internal
+     0.06%     0.03%  kmeans   [kernel.kallsyms]    [k] page_remove_rmap
+     0.06%     0.03%  kmeans   [kernel.kallsyms]    [k] mem_cgroup_charge_statistics.constprop.0
+     0.06%     0.06%  kmeans   libc.so.6            [.] __strlen_evex
+     0.06%     0.06%  kmeans   libc.so.6            [.] __memchr_evex
+     0.05%     0.01%  kmeans   [kernel.kallsyms]    [k] __sysvec_apic_timer_interrupt
+     0.05%     0.05%  kmeans   [kernel.kallsyms]    [k] filemap_get_read_batch
+     0.05%     0.00%  kmeans   [kernel.kallsyms]    [k] filemap_get_pages
+     0.05%     0.05%  kmeans   [kernel.kallsyms]    [k] _raw_spin_lock
+     0.05%     0.05%  kmeans   libc.so.6            [.] __strchrnul_evex
+     0.05%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_da_write_begin
+     0.05%     0.02%  kmeans   [kernel.kallsyms]    [k] __pagevec_lru_add_fn
+     0.05%     0.01%  kmeans   [kernel.kallsyms]    [k] page_add_new_anon_rmap
+     0.05%     0.00%  kmeans   [kernel.kallsyms]    [k] __mod_lruvec_page_state
+     0.05%     0.05%  kmeans   libc.so.6            [.] __memmove_evex_unaligned_erms
+     0.05%     0.01%  kmeans   [kernel.kallsyms]    [k] __mod_lruvec_state
+     0.05%     0.03%  kmeans   [kernel.kallsyms]    [k] __mod_memcg_lruvec_state
+     0.05%     0.05%  kmeans   libc.so.6            [.] __random_r
+     0.05%     0.01%  kmeans   [kernel.kallsyms]    [k] hrtimer_interrupt
+     0.04%     0.04%  kmeans   libstdc++.so.6.0.30  [.] std::use_facet<std::ctype<char> >
+     0.04%     0.03%  kmeans   [kernel.kallsyms]    [k] __cgroup_throttle_swaprate
+     0.04%     0.04%  kmeans   libc.so.6            [.] _IO_no_init
+     0.04%     0.01%  kmeans   [kernel.kallsyms]    [k] pagecache_get_page
+     0.04%     0.00%  kmeans   [kernel.kallsyms]    [k] grab_cache_page_write_begin
+     0.03%     0.03%  kmeans   libc.so.6            [.] _IO_setb
+     0.03%     0.00%  kmeans   [kernel.kallsyms]    [k] __fsnotify_parent
+     0.03%     0.00%  kmeans   [kernel.kallsyms]    [k] fsnotify
+     0.03%     0.01%  kmeans   [kernel.kallsyms]    [k] send_to_group
+     0.03%     0.00%  kmeans   [kernel.kallsyms]    [k] __hrtimer_run_queues
+     0.03%     0.00%  kmeans   [kernel.kallsyms]    [k] tick_sched_timer
+     0.03%     0.03%  kmeans   libstdc++.so.6.0.30  [.] std::ostream::sentry::sentry
+     0.03%     0.00%  kmeans   [unknown]            [.] 0x00007ffec5afa100
+     0.03%     0.03%  kmeans   libstdc++.so.6.0.30  [.] std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put
+     0.03%     0.03%  kmeans   libstdc++.so.6.0.30  [.] std::codecvt<char, char, __mbstate_t>::do_always_noconv
+     0.03%     0.03%  kmeans   [kernel.kallsyms]    [k] down_read_trylock
+     0.02%     0.02%  kmeans   libstdc++.so.6.0.30  [.] 0x000000000009f6b0
+     0.02%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b56b0
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] fsnotify_handle_inode_event.isra.0
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] inotify_handle_inode_event
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] fsnotify_insert_event
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] __wake_up
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] __wake_up_common_lock
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] __wake_up_common
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] pollwake
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] default_wake_function
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] try_to_wake_up
+     0.02%     0.02%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000a0b50
+     0.02%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b6b50
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] irq_exit_rcu
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] handle_softirqs
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] tick_sched_handle
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] update_process_times
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] mark_page_accessed
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] __mod_zone_page_state
+     0.02%     0.02%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000a12c0
+     0.02%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b72c0
+     0.02%     0.00%  kmeans   [unknown]            [.] 0000000000000000
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] __next_zones_zonelist
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] __page_set_anon_rmap
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] __mod_node_page_state
+     0.02%     0.02%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000a20f0
+     0.02%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b80f0
+     0.02%     0.02%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000a00b0
+     0.02%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b60b0
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] rcu_core_si
+     0.02%     0.00%  kmeans   [kernel.kallsyms]    [k] rcu_core
+     0.02%     0.02%  kmeans   [kernel.kallsyms]    [k] copy_page_to_iter
+     0.01%     0.00%  kmeans   libc.so.6            [.] __close_nocancel
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] syscall_exit_to_user_mode
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ____fput
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __fput
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_release_file
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_alloc_da_blocks
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] filemap_flush
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] filemap_fdatawrite_wbc
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_writepages
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_writepages
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] mpage_map_and_submit_extent
+     0.01%     0.01%  kmeans   libc.so.6            [.] __printf_fp
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb46c
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec51146c
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_block_write_begin
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_da_get_block_prep
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_da_map_blocks.constprop.0
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] available_idle_cpu
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] select_task_rq_fair
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] wake_affine
+     0.01%     0.01%  kmeans   kmeans               [.] 0x0000000000002540
+     0.01%     0.00%  kmeans   kmeans               [.] 0x00005578292f3540
+     0.01%     0.01%  kmeans   libc.so.6            [.] _IO_old_init
+     0.01%     0.01%  kmeans   libc.so.6            [.] __mpn_lshift
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] scheduler_tick
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] balance_dirty_pages_ratelimited
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] balance_dirty_pages
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] mem_cgroup_wb_stats
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __mem_cgroup_flush_stats
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] cgroup_rstat_flush_irqsafe
+     0.01%     0.00%  kmeans   libc.so.6            [.] __GI___libc_open
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_openat
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_sys_openat2
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_filp_open
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] path_openat
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_open
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_truncate
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] notify_change
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_setattr
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] truncate_pagecache
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] truncate_inode_pages_range
+     0.01%     0.01%  kmeans   libc.so.6            [.] _IO_default_xsputn
+     0.01%     0.00%  kmeans   [unknown]            [.] 0xec543c6700007ffe
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x000000000012b254
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec541254
+     0.01%     0.01%  kmeans   libc.so.6            [.] __libc_alloca_cutoff
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __page_cache_alloc
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] alloc_pages
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] std::locale::facet::_S_get_c_locale
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] pmd_page_vaddr
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] rcu_read_unlock_strict
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] arch_local_irq_enable
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] page_mapping
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] memcg_check_events
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] pgd_none
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] ttwu_queue_wakelist
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x302e302d20383530
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] ext4_last_io_end_vec
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] mpage_map_and_submit_buffers
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] mpage_process_page
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x363531382e302037
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] std::messages<char>::messages
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] entry_SYSCALL_64
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x3531332e302d2031
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x000000000012b240
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec541240
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] add_to_page_cache_lru
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x303038332e302039
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] blkcg_rstat_flush
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x706d6178450a2038
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] cgroup_rstat_flush_locked
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb423
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec511423
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __es_tree_search.isra.0
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x3237312e302d2033
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_es_insert_delayed_block
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x000000000012b259
+     0.01%     0.00%  kmeans   [unknown]            [.] 0x400000000002855f
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x3634342e302d2035
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb467
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec511467
+     0.01%     0.01%  kmeans   libc.so.6            [.] __mpn_rshift
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] rcu_cblist_dequeue
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] rcu_do_batch
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] std::__numpunct_cache<char>::_M_cache
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x383933322e302d20
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] sync_regs
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] ktime_get_update_offsets_now
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] hrtimer_active
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] task_tick_fair
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] account_user_time
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] account_process_tick
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x203734342e312037
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] update_vsyscall
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] tick_sched_do_timer
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] tick_do_update_jiffies64
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] update_wall_time
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] timekeeping_advance
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] timekeeping_update
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] _raw_spin_trylock
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] note_gp_changes
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] block_invalidatepage
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x0000000000670067
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] truncate_cleanup_page
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_invalidatepage
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_exit_group
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_group_exit
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] do_exit
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] exit_mm
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] mmput
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] exit_mmap
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] uncharge_page
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __mem_cgroup_uncharge_list
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb4b5
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec5114b5
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x33302e302d203130
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __add_to_page_cache_locked
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x343834372e302034
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] dquot_claim_space_nodirty
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_map_blocks
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ext4_ext_map_blocks
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x3131332e30203132
+     0.01%     0.00%  kmeans   [unknown]            [.] 0x5000007ffec5afa1
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000a0eb0
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b6eb0
+     0.01%     0.00%  kmeans   [unknown]            [.] 0x0000000003ff2ff0
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb4ca
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec5114ca
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x303035342e312039
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x31313932302e3020
+     0.01%     0.01%  kmeans   kmeans               [.] 0x00000000000028a0
+     0.01%     0.00%  kmeans   kmeans               [.] 0x00005578292f38a0
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x363336342e302035
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x00000000000fb400
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec511400
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] perf_event_task_tick
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] tlb_finish_mmu
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __run_timers.part.0
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] run_timer_softirq
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] 0x000000000009f630
+     0.01%     0.00%  kmeans   libstdc++.so.6.0.30  [.] 0x00007f96ec4b5630
+     0.01%     0.01%  kmeans   libstdc++.so.6.0.30  [.] std::__num_base::_S_format_float
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] _raw_spin_lock_irqsave
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] lock_page_lruvec_irqsave
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __cond_resched
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] kthread_blkcg
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] error_entry
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] queued_spin_unlock
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] find_vma
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x00000a332c303031
+     0.01%     0.00%  kmeans   libc.so.6            [.] __GI___libc_write
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] __x64_sys_write
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] ksys_write
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] vfs_write
+     0.01%     0.00%  kmeans   [kernel.kallsyms]    [k] new_sync_write
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] set_pte
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __count_memcg_events
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] find_lock_entries
+     0.01%     0.00%  kmeans   [unknown]            [k] 0x0000000000676f6c
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] mem_cgroup_from_task
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] pmd_val
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] page_counter_try_charge
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] _find_first_bit
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] arch_local_irq_enable
+     0.01%     0.01%  kmeans   [kernel.kallsyms]    [k] __mem_cgroup_threshold
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] native_write_msr
+     0.00%     0.00%  perf-ex  [unknown]            [k] 0x00007fedf6ec108b
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] do_syscall_64
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] x64_sys_call
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] __x64_sys_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] do_execveat_common.isra.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] bprm_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] bprm_execve.part.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] exec_binprm
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] search_binary_handler
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] load_elf_binary
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] begin_new_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] perf_event_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] ctx_resched
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] x86_pmu_enable
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]    [k] intel_pmu_enable_all
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

@@ -249,7 +249,48 @@ void clampedExpVector(float* values, int* exponents, float* output, int N) {
   // Your solution should work for any value of
   // N and VECTOR_WIDTH, not just when VECTOR_WIDTH divides N
   //
-  
+  __cs149_vec_float x;
+  __cs149_vec_int y;
+  __cs149_vec_float result; // 注意需要初始化result!
+  __cs149_vec_int zero_i = _cs149_vset_int(0);
+  __cs149_vec_int one_i = _cs149_vset_int(1);
+  __cs149_vec_float nine_f = _cs149_vset_float(9.999999f);
+  __cs149_mask maskAll, maskif, maskelse, maskgt;
+  int usageBitNum;
+  for (int i = 0; i < N; i += VECTOR_WIDTH) {
+    usageBitNum = (i + VECTOR_WIDTH <= N) ? VECTOR_WIDTH: N - i;
+
+    //load data
+    maskAll = _cs149_init_ones(usageBitNum);
+    _cs149_vload_float(x, values + i, maskAll);
+    _cs149_vload_int(y, exponents + i, maskAll);
+
+    // if y == 0
+    maskif = _cs149_init_ones(0);
+    _cs149_veq_int(maskif, y, zero_i, maskAll);
+    _cs149_vset_float(result, 1.f, maskif); // 依据判断初始化result
+
+    // else
+    maskelse = _cs149_mask_not(maskif);
+    _cs149_vmove_float(result, x, maskelse); // 依据判断初始化result
+
+    maskelse = _cs149_init_ones(0);
+    _cs149_vsub_int(y, y, one_i, maskAll);
+    _cs149_vgt_int(maskelse, y, zero_i, maskAll);
+    while (_cs149_cntbits(maskelse) > 0) {
+      _cs149_vmult_float(result, result, x, maskelse);
+      _cs149_vsub_int(y, y, one_i, maskAll);
+      _cs149_vgt_int(maskelse, y, zero_i, maskAll);
+    }
+
+    // gt 9.999999f?
+    maskgt = _cs149_init_ones(0);
+    _cs149_vgt_float(maskgt, result, nine_f, maskAll);
+    _cs149_vset_float(result, 9.999999f, maskgt);
+
+    // store data
+    _cs149_vstore_float(output+i, result, maskAll);
+  }
 }
 
 // returns the sum of all elements in values
@@ -270,11 +311,22 @@ float arraySumVector(float* values, int N) {
   //
   // CS149 STUDENTS TODO: Implement your vectorized version of arraySumSerial here
   //
-  
+  __cs149_mask maskAll;
+  __cs149_vec_float x, y;
+  float result = 0;
+  int cnt;
+
   for (int i=0; i<N; i+=VECTOR_WIDTH) {
-
+    cnt = VECTOR_WIDTH;
+    maskAll = _cs149_init_ones();
+    _cs149_vload_float(x, values + i, maskAll);
+    while (cnt > 1) {
+      _cs149_hadd_float(y, x);
+      _cs149_interleave_float(x, y);
+      cnt /= 2;
+    }
+    result += x.value[0]; 
   }
-
-  return 0.0;
+  return result;
 }
 

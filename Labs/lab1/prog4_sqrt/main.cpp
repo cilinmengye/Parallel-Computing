@@ -34,7 +34,18 @@ int main() {
         // to you generate best and worse-case speedups
         
         // starter code populates array with random input values
-        values[i] = .001f + 2.998f * static_cast<float>(rand()) / RAND_MAX;
+        // values[i] = .001f + 2.998f * static_cast<float>(rand()) / RAND_MAX;
+        // values[i] = 2.999f;
+    }
+    for (unsigned int i = 0; i < N; i += 8) {
+        values[i + 0] = 1.f;
+        values[i + 1] = 1.5f;
+        values[i + 2] = 2.f;
+        values[i + 3] = 2.5f;
+        values[i + 4] = 2.75f;
+        values[i + 5] = 2.85f;
+        values[i + 6] = 2.95f;
+        values[i + 7] = 2.999f;
     }
 
     // generate a gold version to check results
