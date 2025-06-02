@@ -1,0 +1,35 @@
+Rendering to 1024x1024 image
+Loaded data for 100000 circles from snow.par
+Loaded scene with 100000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+Device 1: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+---------------------------------------------------------
+WARNING: You're not running on a fast GPU, please consider using NVIDIA GTX 480, 670 or 780.
+---------------------------------------------------------
+
+Running benchmark, 4 frames, beginning at frame 0 ...
+Dumping frames to logs/output_xxx.ppm
+Copying image data from device
+Wrote image file logs/output_0000.ppm
+Copying image data from device
+Wrote image file logs/output_0001.ppm
+Copying image data from device
+Wrote image file logs/output_0002.ppm
+Copying image data from device
+Wrote image file logs/output_0003.ppm
+Clear:    0.0561 ms
+Advance:  0.0053 ms
+Render:   4.3486 ms
+Total:    4.4100 ms
+File IO:  38.2237 ms
+
+Overall:  0.1998 sec (note units are seconds)

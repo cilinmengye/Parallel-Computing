@@ -1,0 +1,14 @@
+---------------------------------------------------------
+Found 2 CUDA devices
+Device 0: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+Device 1: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+---------------------------------------------------------
+Array size: 10000000
+Student GPU time: 4.224 ms
+Find_repeats outputs are correct!

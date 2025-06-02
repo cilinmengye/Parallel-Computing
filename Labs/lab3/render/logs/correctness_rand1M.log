@@ -1,0 +1,29 @@
+Rendering to 1024x1024 image
+Loaded scene with 1000000 circles
+Loaded scene with 1000000 circles
+---------------------------------------------------------
+Initializing CUDA for CudaRenderer
+Found 2 CUDA devices
+Device 0: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+Device 1: NVIDIA GeForce RTX 4090
+   SMs:        128
+   Global mem: 24210 MB
+   CUDA Cap:   8.9
+---------------------------------------------------------
+
+Running benchmark, 1 frames, beginning at frame 0 ...
+Dumping frames to logs/output_xxx.ppm
+Copying image data from device
+Wrote image file logs/output_0000.ppm
+Copying image data from device
+***************** Correctness check passed **************************
+Clear:    0.1120 ms
+Advance:  0.0013 ms
+Render:   2391.3422 ms
+Total:    2391.4555 ms
+File IO:  53.5268 ms
+
+Overall:  5.8939 sec (note units are seconds)
